@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>ESP32 Dizi Menü Tasarımı</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 15mm;
+            background-color: #000000;
+        }
+        body {
+            background-color: #000000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        .grid {
+            display: table;
+            width: 100%;
+            border-spacing: 15px;
+        }
+        .grid-row {
+            display: table-row;
+        }
+        .app-card {
+            display: table-cell;
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 15px;
+            width: 30%;
+            vertical-align: middle;
+            border: 1px solid #333;
+        }
+        .icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .app-name {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 14pt;
+        }
+        .btn-group {
+            margin-top: 10px;
+        }
+        button {
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 4px;
+            font-size: 10pt;
+        }
+        .btn-open {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-del {
+            background-color: #dc3545;
+            color: white;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #333;
+            margin: 40px 0;
+        }
+        .form-container {
+            background: #111;
+            padding: 25px;
+            border-radius: 15px;
+            display: inline-block;
+            width: 80%;
+            border: 1px dashed #444;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background: #222;
+            color: white;
+        }
+        .btn-add {
+            background-color: #28a745;
+            color: white;
+            width: 50%;
+            padding: 12px;
+            margin-top: 10px;
+            font-size: 11pt;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>ESP32 Dizi Menü Arayüzü</h2>
+        
+        <div class="grid">
+            <div class="grid-row">
+                <div class="app-card">
+                    <span class="icon">📱</span>
+                    <span class="app-name">Spotify</span>
+                    <div class="btn-group">
+                        <button class="btn-open">Aç</button>
+                        <button class="btn-del">X</button>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <span class="icon">🏠</span>
+                    <span class="app-name">Home Bot</span>
+                    <div class="btn-group">
+                        <button class="btn-open">Aç</button>
+                        <button class="btn-del">X</button>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <span class="icon">🌡️</span>
+                    <span class="app-name">Sıcaklık</span>
+                    <div class="btn-group">
+                        <button class="btn-open">Aç</button>
+                        <button class="btn-del">X</button>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="app-card">
+                    <span class="icon">💡</span>
+                    <span class="app-name">Lamba</span>
+                    <div class="btn-group">
+                        <button class="btn-open">Aç</button>
+                        <button class="btn-del">X</button>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <span class="icon">☁️</span>
+                    <span class="app-name">Weather</span>
+                    <div class="btn-group">
+                        <button class="btn-open">Aç</button>
+                        <button class="btn-del">X</button>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <span class="icon">⚙️</span>
+                    <span class="app-name">Ayarlar</span>
+                    <div class="btn-group">
+                        <button class="btn-open">Aç</button>
+                        <button class="btn-del">X</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="form-container">
+            <h3 style="margin-top:0;">Yeni Uygulama Ekle</h3>
+            <input type="text" placeholder="Uygulama İsmi (Örn: YouTube)">
+            <input type="text" placeholder="URL (Örn: https://...)">
+            <button class="btn-add">Listeye Ekle</button>
+        </div>
+    </div>
+</body>
+</html>
